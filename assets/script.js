@@ -1,6 +1,31 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+
+// set current date and time
+const currentDate = dayjs();
+const formattedDate = currentDate.format("dddd,MMMM,YYYY h:mm:ss a");
+console.log(formattedDate);
+
+// current time and date is being logged but not updated to webpage constantly?
+function liveTimeAndDate() {
+  // attach html elements
+  const dateEl = $("#date");
+  const timeEl = $("#time");
+  // link to local timezone
+  const currentDate = dayjs().format("dddd, MMMM D, YYYY");
+  const currentTime = dayjs().format("h:mm:ss A");
+  // create text to webpage
+  dateEl.text(currentDate);
+  timeEl.text(currentTime);
+  // check
+  console.log(liveTimeAndDate);
+}
+// set interval attaches live and date but incorrect time? GMT? -- corrected, needed to be linked again to local timezone
+setInterval(liveTimeAndDate, 1000);
+
+//link current date and time to html id to show on webpage
+
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
