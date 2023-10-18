@@ -24,7 +24,17 @@ function liveTimeAndDate() {
 // set interval attaches live and date but incorrect time? GMT? -- corrected, needed to be linked again to local timezone
 setInterval(liveTimeAndDate, 1000);
 
-//link current date and time to html id to show on webpage
+$(function textEntry() {
+  // TODO: Add a listener for click events on the save button.
+  // jquery
+  $(".saveBtn").on("click", function () {
+    const key = $(this).parent().attr("id");
+    const value = $(this).siblings(".description").val();
+    localStorage.setItem(key, value);
+  });
+
+  // This code should use the id in the containing time-block as a key to save the user input in local storage.
+});
 
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
