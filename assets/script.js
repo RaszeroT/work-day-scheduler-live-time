@@ -3,11 +3,13 @@
 // in the html.
 
 // set current date and time
+// dayjs
 const currentDate = dayjs();
 const formattedDate = currentDate.format("dddd,MMMM,YYYY h:mm:ss a");
 console.log(formattedDate);
 
 // current time and date is being logged but not updated to webpage constantly?
+// dayjs
 function liveTimeAndDate() {
   // attach html elements
   const dateEl = $("#date");
@@ -24,16 +26,27 @@ function liveTimeAndDate() {
 // set interval attaches live and date but incorrect time? GMT? -- corrected, needed to be linked again to local timezone
 setInterval(liveTimeAndDate, 1000);
 
+// jquery
 $(function textEntry() {
   // TODO: Add a listener for click events on the save button.
   // jquery
   $(".saveBtn").on("click", function () {
+    // create id
     const key = $(this).parent().attr("id");
     const value = $(this).siblings(".description").val();
     localStorage.setItem(key, value);
+    console.log("stored");
   });
 
   // This code should use the id in the containing time-block as a key to save the user input in local storage.
+});
+
+// jQuery = this function will retrieve local storage and remain in text area upon refresh
+$(".time-block").each(function () {
+  const key = $(this).attr("id");
+  const value = localStorage.getItem(key);
+  $(this).children(".description").val(value);
+  console.log("retrieved");
 });
 
 $(function () {
