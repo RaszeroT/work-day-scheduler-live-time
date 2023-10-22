@@ -1,13 +1,10 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
-
 // set current date and time
 // dayjs
 const currentDate = dayjs();
 const formattedDate = currentDate.format("dddd,MMMM,YYYY h:mm:ss a");
+const currentHour = dayjs().format("H");
 console.log(formattedDate);
-
+console.log('current hour: ' + currentHour)
 // current time and date is being logged but not updated to webpage constantly?
 // dayjs
 function liveTimeAndDate() {
@@ -47,6 +44,20 @@ $(".time-block").each(function () {
   const value = localStorage.getItem(key);
   $(this).children(".description").val(value);
   console.log("retrieved");
+});
+
+// TODO: Add code to apply the past, present, or future class to each time
+// block by comparing the id to the current hour. HINTS: How can the id
+// attribute of each time-block be used to conditionally add or remove the
+// past, present, and future classes? How can Day.js be used to get the
+// current hour in 24-hour time?
+$(function hourlyColorChange() {
+  $(".time-block").each(function () {
+    const hourBlock = parseInt(this.id);
+    $(this).toggleClass("past", hourBlock < currentHour);
+    $(this).toggleClass("present", hourBlock === currentHour);
+    $(this).toggleClass("future", hourBlock > currentHour);
+  });
 });
 
 $(function () {
