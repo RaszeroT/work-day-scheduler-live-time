@@ -1,31 +1,19 @@
-// set current date and time
-// dayjs
+// dayjs = set current date and time
 const currentDate = dayjs();
 const formattedDate = currentDate.format("dddd,MMMM,YYYY h:mm:ss a");
+
+// currentHour variable to set hour for hourlyColorChange function
 const currentHour = dayjs().format("H");
-// test hour
-// const currentHour = 10;
 
-console.log(formattedDate);
-console.log("current hour: " + currentHour);
-
-// current time and date is being logged but not updated to webpage constantly?
-// dayjs
+// dayjs = this function will attach live date and time to webpage
 function liveTimeAndDate() {
-  // attach html elements
   const dateEl = $("#date");
   const timeEl = $("#time");
-  // link to local timezone
   const currentDate = dayjs().format("dddd, MMMM D, YYYY");
   const currentTime = dayjs().format("h:mm:ss A");
-  // create text to webpage
   dateEl.text(currentDate);
   timeEl.text(currentTime);
-  // check
-  console.log(liveTimeAndDate);
-}
-// set interval attaches live and date but incorrect time? GMT? -- corrected, needed to be linked again to local timezone
-setInterval(liveTimeAndDate, 1000);
+} setInterval(liveTimeAndDate, 1000);
 
 // jquery = this function will let you save input to description class of rows and allow you to save to local storage 
 $(function textEntry() {
@@ -42,7 +30,6 @@ $(".time-block").each(function () {
   const key = $(this).attr("id");
   const value = localStorage.getItem(key);
   $(this).children(".description").val(value);
-  console.log("retrieved");
 });
 
 //jQuery = this function will make the timeBlocks change color according to the current time
