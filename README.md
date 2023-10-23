@@ -1,0 +1,36 @@
+# Description
+
+<p>This web page is a live workday scheduler which shows current time and date. Not only does this scheduler present current time, it will change the color of the time block every hour; past will be shown in gray, present in red, and future in green. Items entered into the text area will be shown up until page refresh. Items in the text area which are saved before refresh will be saved locally and will remain on the webpage and hour they are saved to after refresh... (is it possible to clear local storage after either once it hits 6pm everyday and/or I want to put in a clear button) --- !!THIS IS A NOTE!! GET RID OF THIS!! </p>
+
+## Code in index.HTML
+
+<p>Code to index.Html is relatively simple laying out divs for the the header of the page. A live date and time within the header. Following there is a container with 9 sections within to create the time shown to the left of the webpage, the text input area and the save button to the right. </p>
+
+## Code in script.js
+
+<p>Code to script.js contains functions using dayjs, jQuery, and vanilla Javascript in the following: </p>
+<ul>
+<li>Used dayjs to set local current date and time,</li>
+<li>Added dayjs function for live date and time to show on screen within the header,</li>
+<li>Added jQuery function to save user input to text entry areas to local storage. ONLY text areas with input entered THEN the User clicks the save button before screen refresh will be saved, </li>
+<li>Added jQuery function to retrieve values from local storage so THAT upon refresh the saved inputs will remain on screen, </li>
+<li>Added jQuery function so that the webpage hourblock areas will change accourding to live time. The hourblock will be gray for past, red for present, and green for past, and</li>
+<li>Added a function from geeksforgeeks.org which will refresh the page automatically for any given interval.</li>
+
+</ul>
+
+## What I learned and/or struggled with
+
+  <p>I learned that dayjs is simple to understand an neat in comparison to vanilla JavaScript now.getTime. Not only is dayjs simpler to user but the ability to set multiple formats for so many different displays I thoroughly enjoyed this ability. <br> Originally I thought for the hourlyColorChange function the script.js file I was going to have to use a large if-else conditional to get he color to change as needed. However, finding the .toggleClass() element in jQuery has to be my happiest moment in this challenge. Not only did I save myself probably 25 lines of code. I ended up with a very neat, clean, and understandable section of code for this function.</p>
+
+## Link to live site
+
+<a href="">Title of webpage here eg. My pop quiz</a>
+
+## Image of webpage functionality
+
+<img src="./images/work-day-scheduler-image.jpeg" width="600" height=""> 
+
+## License
+
+N/A
