@@ -1,6 +1,6 @@
 # Description
 
-<p>This web page is a live workday scheduler which shows current time and date. Not only does this scheduler present current time, it will change the color of the time block every hour; past will be shown in gray, present in red, and future in green. Items entered into the text area will be shown until page refresh. Items in the text area which are saved before refresh will be saved locally and will remain on the webpage and hour they are saved to after refresh... (is it possible to clear local storage after either once it hits 6pm everyday and/or I want to put in a clear button) --- !!THIS IS A NOTE!! GET RID OF THIS!! </p>
+<p>This web page is a live workday scheduler which shows current time and date. Not only does this scheduler present current time, it will change the color of the time block every hour; past will be shown in gray, present in red, and future in green. Items entered into the text area will be shown until page refresh. Items in the text area which are saved before refresh will be saved locally and will remain on the webpage and hour they are saved to after refresh.  </p>
 
 ## Code in index.HTML
 
@@ -14,8 +14,8 @@
 <li>Added dayjs function for live date and time to show on screen within the header,</li>
 <li>Added jQuery function to save user input to text entry areas to local storage. ONLY text areas with input entered THEN the User clicks the save button before screen refresh will be saved, </li>
 <li>Added jQuery function to retrieve values from local storage so THAT upon refresh the saved inputs will remain on screen, </li>
-<li>Added jQuery function so that the webpage hourblock areas will change according to live time. The hourblock will be gray for past, red for present, and green for future, and</li>
-<li>Added a function from geeksforgeeks.org which will refresh the page automatically for any given interval.</li>
+<li>Added jQuery function so that the webpage hourblock areas will change according to live time. The hourblock will be gray for past, red for present, and green for future.</li>
+
 
 </ul>
 
@@ -25,7 +25,7 @@
 
 ## Link to live site
 
-<a href="">Title of webpage here eg. My pop quiz</a>
+<a href="https://raszerot.github.io/work-day-scheduler-live-time/">Work Day Scheduler</a>
 
 ## Image of webpage functionality
 

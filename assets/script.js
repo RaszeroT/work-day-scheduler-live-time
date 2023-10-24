@@ -13,9 +13,10 @@ function liveTimeAndDate() {
   const currentTime = dayjs().format("h:mm:ss A");
   dateEl.text(currentDate);
   timeEl.text(currentTime);
-} setInterval(liveTimeAndDate, 1000);
+}
+setInterval(liveTimeAndDate, 1000);
 
-// jquery = this function will let you save input to description class of rows and allow you to save to local storage 
+// jquery = this function will let you save input to description class of rows and allow you to save to local storage
 $(function textEntry() {
   $(".saveBtn").on("click", function () {
     const key = $(this).parent().attr("id");
@@ -42,9 +43,11 @@ $(function hourlyColorChange() {
   });
 });
 
-// geeksforgeeks.org = I want the page to auto refresh so timeblock colors will be live - - need to follow up with TA to see if there is a better way to run this 
+// geeksforgeeks.org = I want the page to auto refresh so timeblock colors will be live - - need to follow up with TA to see if there is a better way to run this
 function autoRefresh() {
-  window.location = window.location.href;
-} setInterval('autoRefresh()', 15*60*1000);
+  window.location.reload();
+}
+setInterval(autoRefresh, 15 * 60 * 1000);
 
 console.log(autoRefresh);
+//setInterval(check)
